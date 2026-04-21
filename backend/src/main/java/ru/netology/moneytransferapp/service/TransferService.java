@@ -61,7 +61,7 @@ public class TransferService {
         String from = transfer.getCardFromNumber();
         String to = transfer.getCardToNumber();
         String cvv = transfer.getCardFromCVV();
-        Long amount = transfer.getAmount().getValue();
+        Double amountValue = transfer.getAmount().getValue();
 
         if (!from.matches("\\d{16}")) {
             throw new ErrorInputDataException(2, "Invalid cardFromNumber format");
@@ -72,7 +72,7 @@ public class TransferService {
         if (!cvv.matches("\\d{3}")) {
             throw new ErrorInputDataException(4, "Invalid CVV format");
         }
-        if (amount <= 0) {
+        if (amountValue <= 0) {
             throw new ErrorTransferException(5, "Transfer amount must be greater than 0");
         }
 

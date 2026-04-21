@@ -3,3 +3,6 @@
 *.iws
 *.iml
 *.ipr
+
+.DS_Store
+/backend/logs/
