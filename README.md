@@ -98,7 +98,7 @@ Response:
 
 ## Логирование
 
-Все операции сохраняются в файл `./logs/transfer-log.jsonl`
+Все операции сохраняются в файл `./backend/logs/transfer-log.jsonl`
 
 Пример записи:
 ```aiignore
