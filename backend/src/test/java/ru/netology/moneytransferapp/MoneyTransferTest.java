@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import ru.netology.moneytransferapp.controller.TransferController;
+import ru.netology.moneytransferapp.dto.Amount;
 import ru.netology.moneytransferapp.dto.ConfirmOperation;
 import ru.netology.moneytransferapp.dto.Transfer;
 import ru.netology.moneytransferapp.service.TransferService;
@@ -13,7 +14,13 @@ import java.util.Map;
 class MoneyTransferTest {
     @Test
     void test_add_transfer() {
-        Transfer transfer = new Transfer();
+        Transfer transfer = new Transfer(
+                "5567567834254897",
+                "12/29",
+                "342",
+                "7654637482790154",
+                new Amount(1000D, "RUR")
+        );
 
         TransferService service = Mockito.mock(TransferService.class);
         Mockito.when(service.addTransfer(Mockito.any(Transfer.class)))
@@ -28,7 +35,10 @@ class MoneyTransferTest {
 
     @Test
     void test_confirm_operation() {
-        ConfirmOperation confirmOperation = new ConfirmOperation();
+        ConfirmOperation confirmOperation = new ConfirmOperation(
+                "0",
+                "1111"
+        );
 
         TransferService service = Mockito.mock(TransferService.class);
         Mockito.when(service.confirmOperation(Mockito.any(ConfirmOperation.class)))

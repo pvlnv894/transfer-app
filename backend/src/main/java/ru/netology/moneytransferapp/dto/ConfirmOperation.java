@@ -1,21 +1,10 @@
 package ru.netology.moneytransferapp.dto;
 
-import jakarta.validation.constraints.NotNull;
-import lombok.Getter;
+import jakarta.validation.constraints.NotBlank;
 
-public class ConfirmOperation {
-    @NotNull
-    @Getter
-    private String operationId;
-    @NotNull
-    @Getter
-    private String code;
-
-    public ConfirmOperation(String operationId, String code) {
-        this.operationId = operationId;
-        this.code = code;
-    }
-
-    public ConfirmOperation() {
-    }
+public record ConfirmOperation (
+        @NotBlank
+        String operationId,
+        @NotBlank
+        String code) {
 }

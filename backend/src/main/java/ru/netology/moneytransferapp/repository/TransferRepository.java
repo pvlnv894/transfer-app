@@ -8,8 +8,8 @@ import java.util.concurrent.ConcurrentHashMap;
 
 @Repository
 public class TransferRepository {
-    private Map<String, String> codes = new ConcurrentHashMap<>();
-    private Map<String, TransferLogEntry> logs = new ConcurrentHashMap<>();
+    private final Map<String, String> codes = new ConcurrentHashMap<>();
+    private final Map<String, TransferLogEntry> logs = new ConcurrentHashMap<>();
 
     public void saveCode(String id, String code) {
         codes.put(id, code);
