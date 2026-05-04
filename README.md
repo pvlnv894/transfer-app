@@ -104,11 +104,16 @@ Response:
 ```aiignore
 {
   "operationId": "0",
-  "transfer": { ... },
   "date": "2026-04-21",
   "time": "13:59:44",
-  "commission": "100",
-  "status": "CONFIRMED"
+  "cardFromNumber":"0000000000000000",
+  "cardFromValidTill":"12/29",
+  "cardFromCVV":"000",
+  "cardToNumber":"0000000000000000",
+  "valueInRubles":100.0,
+  "commission":1.0,
+  "currency":"RUR",
+  "status":"CONFIRMED"
 }
 ```
 
